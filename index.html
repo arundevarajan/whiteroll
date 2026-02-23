@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiteroll | Premium Thermal Paper Rolls & In-Bus Ads Kerala</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f2f2f2; color: #1d1d1f; overflow-x: hidden; }
+        .glass-nav { background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .scroll-active { box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1) !important; transform: scale(1.03); transition: 0.5s; z-index: 10; }
+        .ad-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        
+        .hero-section { position: relative; overflow: hidden; background: #050505; min-height: 85vh; display: flex; align-items: center; justify-content: center; }
+        .moving-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: url('image_e59299.png') center center / cover no-repeat;
+            opacity: 0.3;
+            animation: moveBackground 20s linear infinite alternate;
+            z-index: 1;
+        }
+        @keyframes moveBackground { from { transform: scale(1); } to { transform: scale(1.1); } }
+        .hero-content { position: relative; z-index: 10; width: 100%; padding-top: 80px; }
+
+        .h-word { opacity: 0.8; transition: 0.3s; display: inline-block; cursor: default; margin-right: 0.25em; }
+        .h-word:hover { opacity: 1 !important; color: #3b82f6 !important; transform: scale(1.08); font-weight: bold; }
+
+        .admin-card { background: white; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .input-style { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 13px; outline: none; transition: 0.3s; color: black; background: #fafafa; }
+        .input-label { display: block; font-size: 10px; font-weight: 800; color: #666; text-transform: uppercase; margin-bottom: 4px; margin-left: 2px; }
+
+        .whiteroll-main { color: #ffffff !important; font-size: 5rem; font-weight: 800; letter-spacing: -0.05em; text-shadow: none !important; }
+        @media (min-width: 768px) { .whiteroll-main { font-size: 8.5rem; } }
+
+        .prod-card { background: white; border-radius: 35px; padding: 25px; border: 1px solid #eee; text-align: left; }
+    </style>
+</head>
+<body class="text-[#1d1d1f]">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav h-14">
+        <div class="max-w-7xl mx-auto px-6 h-full flex justify-between items-center text-white">
+            <a href="#" class="flex items-center group"><img src="logo.png" class="h-10 w-auto" onerror="this.src='https://via.placeholder.com/150x50?text=Whiteroll'"></a>
+            <div class="hidden md:flex space-x-3 text-[10px] uppercase font-bold">
+                <a href="#about" class="nav-box p-2 bg-white/5 rounded-lg">About</a>
+                <a href="#shop" class="nav-box p-2 bg-white/5 rounded-lg">Products</a>
+                <a href="#hyway" class="nav-box p-2 bg-white/5 rounded-lg text-blue-400">Hyway Bus</a>
+                <a href="#ads" class="nav-box p-2 bg-white/5 rounded-lg text-green-400">In-Bus Ads</a>
+                <a href="#contact" class="nav-box p-2 bg-white/5 rounded-lg">Contact</a>
+                <button onclick="showLogin()" class="nav-box p-2 bg-white/5 rounded-lg text-gray-400">Admin</button>
+            </div>
+            <a href="#shop" class="bg-white text-black px-4 py-2 rounded-full font-bold text-xs uppercase">Buy Now</a>
+        </div>
+    </nav>
+
+    <section class="hero-section text-white text-center">
+        <div class="moving-bg"></div>
+        <div class="container mx-auto hero-content px-4">
+            <h1 class="whiteroll-main" id="hero-title">Whiteroll</h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-16 max-w-2xl mx-auto font-medium" id="hero-desc"></p>
+            <div class="rounded-[40px] overflow-hidden shadow-2xl border border-gray-900 mx-auto max-w-7xl group scroll-card">
+                <video class="w-full h-auto object-cover group-hover:scale-105 transition duration-1000" autoplay loop muted playsinline><source src="factory_video.mp4" type="video/mp4"></video>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-extrabold mb-6 h-word" id="about-title"></h2>
+                    <p class="text-lg text-gray-600 leading-relaxed h-word" id="about-desc">
+                        Whiteroll is Kerala's leading manufacturer specializing in high-quality thermal paper rolls. Located in Kottathala, Kollam, we provide precision solutions for Billing, POS, and ECG machines using cutting-edge technology.
+                    </p>
+                </div>
+                <div class="rounded-[30px] overflow-hidden shadow-2xl scroll-card"><img src="factory_image.jpg" class="w-full h-auto" onerror="this.src='https://via.placeholder.com/600x400?text=Whiteroll+Production'"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quality" class="py-20 bg-gray-50 border-y border-gray-200 text-center">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-4xl font-extrabold mb-6 h-word" id="quality-title">Quality Paper. Unbeatable Price.</h2>
+            <p class="text-xl text-gray-600 leading-relaxed mb-8 h-word" id="quality-desc">
+                As a leading manufacturer in Kerala, Whiteroll ensures every meter of paper meets international standards. We combine cutting-edge slitting technology with wholesale pricing.
+            </p>
+            <div class="inline-flex flex-wrap justify-center items-center gap-4 text-blue-600 font-bold text-lg">
+                <span class="h-word">Premium Quality</span> • <span class="h-word">Bulk Pricing</span> • <span class="h-word">Made in Kerala</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop" class="py-20 bg-white text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-16 h-word">Our Products</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="prod-card scroll-card flex flex-col">
+                    <img src="2inch.jpg" class="h-32 mx-auto mb-4 object-contain">
+                    <h3 class="font-bold text-lg mb-2">2-Inch POS Roll</h3>
+                    <div class="space-y-2 mb-6">
+                        <select id="gsm-2" class="w-full bg-gray-50 border p-2 rounded-lg text-xs font-bold text-black"><option>44 GSM</option><option>48 GSM</option><option>55 GSM</option></select>
+                        <select id="len-2" class="w-full bg-gray-50 border p-2 rounded-lg text-xs font-bold text-black"><option>13 Meters</option><option>15 Meters</option><option>18 Meters</option></select>
+                        <input id="qty-2" type="number" placeholder="Quantity" class="w-full border p-2 rounded-lg text-xs outline-none text-black">
+                    </div>
+                    <button onclick="orderWhatsApp('2-Inch Roll', 'gsm-2', 'len-2', 'qty-2')" class="bg-blue-600 text-white font-bold py-3 rounded-xl text-sm transition hover:bg-blue-700">Order Now</button>
+                </div>
+                <div class="prod-card scroll-card flex flex-col">
+                    <img src="3inch.jpg" class="h-32 mx-auto mb-4 object-contain">
+                    <h3 class="font-bold text-lg mb-2">3-Inch Billing Roll</h3>
+                    <div class="space-y-2 mb-6">
+                        <select id="gsm-3" class="w-full bg-gray-50 border p-2 rounded-lg text-xs font-bold text-black"><option>55 GSM</option><option>60 GSM</option><option>44 GSM</option></select>
+                        <select id="len-3" class="w-full bg-gray-50 border p-2 rounded-lg text-xs font-bold text-black"><option>25 Meters</option><option>50 Meters</option><option>75 Meters</option></select>
+                        <input id="qty-3" type="number" placeholder="Quantity" class="w-full border p-2 rounded-lg text-xs outline-none text-black">
+                    </div>
+                    <button onclick="orderWhatsApp('3-Inch Roll', 'gsm-3', 'len-3', 'qty-3')" class="bg-blue-600 text-white font-bold py-3 rounded-xl text-sm transition hover:bg-blue-700">Order Now</button>
+                </div>
+                <div class="prod-card scroll-card flex flex-col">
+                    <img src="ecg.jpg" class="h-32 mx-auto mb-4 object-contain">
+                    <h3 class="font-bold text-lg mb-2">Medical ECG Roll</h3>
+                    <div class="space-y-2 mb-6">
+                        <select id="gsm-ecg" class="w-full bg-gray-50 border p-2 rounded-lg text-xs font-bold text-black"><option>55 GSM</option><option>60 GSM</option></select>
+                        <select id="len-ecg" class="w-full bg-gray-50 border p-2 rounded-lg text-xs font-bold text-black"><option>20 Meters</option><option>30 Meters</option></select>
+                        <input id="qty-ecg" type="number" placeholder="Quantity" class="w-full border p-2 rounded-lg text-xs outline-none text-black">
+                    </div>
+                    <button onclick="orderWhatsApp('ECG Roll', 'gsm-ecg', 'len-ecg', 'qty-ecg')" class="bg-blue-600 text-white font-bold py-3 rounded-xl text-sm transition hover:bg-blue-700">Order Now</button>
+                </div>
+                <div class="prod-card scroll-card border-2 border-yellow-400 flex flex-col">
+                    <img src="hyway-etm.jpg" class="h-32 mx-auto mb-4 object-contain">
+                    <h3 class="font-bold text-lg mb-2 text-black">Android ETM</h3>
+                    <div class="space-y-2 mb-6">
+                        <select id="etm-bundle" class="w-full bg-gray-50 border p-2 rounded-lg text-xs font-bold text-black"><option>With Roll Bundle</option><option>Without Rolls</option></select>
+                        <input id="qty-etm" type="number" placeholder="Quantity (Nos)" class="w-full border p-2 rounded-lg text-xs outline-none text-black">
+                    </div>
+                    <button onclick="orderETM()" class="bg-yellow-500 text-black font-bold py-3 rounded-xl text-sm transition hover:bg-yellow-600">Order ETM</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hyway" class="py-24 bg-[#0a0a0a] text-white text-center">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <h2 class="text-5xl font-bold mb-20 h-word">Hyway Smart Bus</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="scroll-card bg-[#151516] rounded-[30px] border border-gray-800 p-8 text-left">
+                    <img src="hyway-etm.jpg" class="h-40 mx-auto mb-6 object-contain">
+                    <h3 class="text-2xl font-bold mb-4 text-yellow-500">Android ETM</h3>
+                    <p class="text-gray-400 mb-6">Smart ticketing and digital payments in one machine.</p>
+                    <a href="https://hyway.app/" target="_blank" class="bg-yellow-500 text-black px-6 py-2 rounded-lg font-bold text-sm inline-block">Visit Website</a>
+                </div>
+                <div class="scroll-card bg-[#151516] rounded-[30px] border border-gray-800 p-8 text-left">
+                    <img src="hyway-owner.jpg" class="h-40 mx-auto mb-6 object-contain">
+                    <h3 class="text-2xl font-bold mb-4 text-green-500">Owner Dashboard</h3>
+                    <p class="text-gray-400 mb-6">Live collection reports and bus tracking.</p>
+                    <a href="https://hyway.app/" target="_blank" class="bg-green-500 text-white px-6 py-2 rounded-lg font-bold text-sm inline-block">Visit Website</a>
+                </div>
+                <div class="scroll-card bg-[#151516] rounded-[30px] border border-gray-800 p-8 text-left">
+                    <img src="hyway-app.jpg" class="h-40 mx-auto mb-6 object-contain">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-400">Passenger App</h3>
+                    <p class="text-gray-400 mb-6">Seat booking and real-time tracking.</p>
+                    <a href="https://hyway.app/" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold text-sm inline-block">Visit Website</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ads" class="ad-gradient py-24 text-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 text-left">
+            <div class="md:w-1/2">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 h-word">Establish Your Product.</h2>
+                <p class="text-xl text-gray-300 italic mb-8 h-word">High-visibility In-Bus TV Ads on Hyway Smart Buses.</p>
+                <button onclick="bookAd()" class="bg-green-500 text-white px-10 py-5 rounded-full font-bold text-xl transition hover:scale-105">Book Ads</button>
+            </div>
+            <div class="md:w-1/2 rounded-[30px] border-[8px] border-gray-800 shadow-2xl overflow-hidden"><img src="bus_interior.jpg" class="w-full h-auto"></div>
+        </div>
+    </section>
+
+    <section id="admin-panel" class="hidden py-24 bg-gray-50 border-t">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-10">
+                <h2 class="text-3xl font-bold uppercase text-black">Live Sales CRM</h2>
+                <button onclick="location.reload()" class="text-red-500 font-bold text-xs uppercase border border-red-500 px-4 py-2 rounded-lg">Logout</button>
+            </div>
+            
+            <div class="admin-card p-8 mb-10 grid md:grid-cols-4 gap-4">
+                <div>
+                    <label class="input-label">Customer Name</label>
+                    <input type="text" id="b-name" placeholder="Name" class="input-style">
+                </div>
+                <div>
+                    <label class="input-label">Phone Number</label>
+                    <input type="tel" id="b-phone" placeholder="Phone" class="input-style">
+                </div>
+                <div>
+                    <label class="input-label">Roll Size</label>
+                    <select id="b-size" class="input-style">
+                        <option>2-Inch POS</option>
+                        <option>3-Inch Billing</option>
+                        <option>ECG Roll</option>
+                        <option>Android ETM</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="input-label">Select GSM</label>
+                    <select id="b-gsm" class="input-style">
+                        <option>44 GSM</option>
+                        <option>48 GSM</option>
+                        <option>55 GSM</option>
+                        <option>60 GSM</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="input-label">Total Amount (₹)</label>
+                    <input type="number" id="b-total" placeholder="₹" class="input-style">
+                </div>
+                <div>
+                    <label class="input-label">Paid Amount (₹)</label>
+                    <input type="number" id="b-paid" placeholder="₹" class="input-style">
+                </div>
+                <div class="md:col-span-2">
+                    <label class="input-label">Remarks / Notes</label>
+                    <input type="text" id="b-remark" placeholder="Payment status or delivery info..." class="input-style">
+                </div>
+                <button onclick="saveToSheet()" class="md:col-span-4 bg-blue-600 text-white py-4 rounded-xl font-bold mt-2 shadow-lg">Save Transaction</button>
+            </div>
+
+            <div class="admin-card overflow-x-auto">
+                <table class="w-full text-left min-w-[800px]">
+                    <thead class="bg-gray-100 text-[10px] uppercase font-bold text-gray-600">
+                        <tr>
+                            <th class="p-4">Customer</th>
+                            <th class="p-4">Product Info</th>
+                            <th class="p-4">Total</th>
+                            <th class="p-4">Paid</th>
+                            <th class="p-4 text-red-500">Balance</th>
+                            <th class="p-4">Remarks</th>
+                            <th class="p-4 text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sheet-list" class="text-sm"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-white border-t text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-6xl font-extrabold mb-10 h-word">Whiteroll</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-16">
+                <a href="tel:+918848561466" class="bg-black text-white px-12 py-5 rounded-full font-bold text-xl shadow-xl transition hover:scale-105 w-full md:w-auto">Call +91 88485 61466</a>
+                <a href="https://wa.me/918848561466" class="bg-[#2ecc71] text-white px-12 py-5 rounded-full font-bold text-xl shadow-xl transition hover:scale-105 w-full md:w-auto">WhatsApp Us</a>
+            </div>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="admin-card p-10 text-left space-y-4 shadow-lg border">
+                    <h3 class="text-2xl font-bold mb-4">Quick Feedback</h3>
+                    <input type="text" id="f-name" placeholder="Full Name" class="input-style">
+                    <textarea id="f-msg" placeholder="Your Requirement..." class="input-style h-32"></textarea>
+                    <button onclick="sendFeedback()" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold transition">Submit Requirement</button>
+                </div>
+                <div class="admin-card overflow-hidden shadow-lg border border-gray-200" style="min-height: 400px;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3940.3546736203593!2d76.74737227503893!3d9.018736591042125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMDEnMDcuNCJOIDc2wrA0NScwMC4zIkU!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <p class="mt-12 text-gray-500 text-sm italic">Whiteroll Industries, Kottathala P.O, Kollam, Kerala.</p>
+        </div>
+    </section>
+
+    <div id="login-modal" class="hidden fixed inset-0 z-[60] flex items-center justify-center bg-black/80 p-4">
+        <div class="bg-white p-8 rounded-[30px] w-full max-w-sm text-center">
+            <h2 class="text-2xl font-bold mb-6">Admin Access</h2>
+            <div id="otp-request-box"><button onclick="requestOTP()" id="send-btn" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Get OTP</button></div>
+            <div id="otp-verify-box" class="hidden space-y-4">
+                <input type="text" id="otp-input" placeholder="6-digit OTP" class="input-style text-center">
+                <button onclick="verifyOTP()" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold">Verify & Login</button>
+            </div>
+            <button onclick="hideLogin()" class="mt-4 text-gray-400">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbze9cy9lhL3g0LGfpjMH8QuTFCsD8bAPMwphY5BNcyLGrpqoE1SkZSoCMyATJLH58IDYQ/exec";
+
+        function wrapWords(text, elementId) {
+            const el = document.getElementById(elementId);
+            if(el) el.innerHTML = text.split(" ").map(w => `<span class="h-word">${w}</span>`).join(" ");
+        }
+
+        window.onload = () => {
+            wrapWords("Whiteroll", 'hero-title');
+            wrapWords("Precision in every meter. Kerala's Premium Thermal Paper Rolls.", 'hero-desc');
+            wrapWords("About Whiteroll Industries", 'about-title');
+        };
+
+        function showLogin() { document.getElementById('login-modal').classList.remove('hidden'); }
+        function hideLogin() { document.getElementById('login-modal').classList.add('hidden'); }
+        
+        async function requestOTP() { document.getElementById('send-btn').innerText = "Sending..."; await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify({ action: "sendOTP" }) }); document.getElementById('otp-request-box').classList.add('hidden'); document.getElementById('otp-verify-box').classList.remove('hidden'); }
+        
+        async function verifyOTP() { 
+            const otp = document.getElementById('otp-input').value; 
+            const res = await fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify({ action: "verifyOTP", otp: otp }) });
+            if ((await res.text()).trim() === "Success") { hideLogin(); document.getElementById('admin-panel').classList.remove('hidden'); document.getElementById('admin-panel').scrollIntoView({behavior:'smooth'}); fetchSheetData(); } 
+            else { alert("Failed."); }
+        }
+
+        async function saveToSheet() {
+            const entry = { 
+                action: "saveData", 
+                name: document.getElementById('b-name').value,
+                phone: document.getElementById('b-phone').value,
+                item: document.getElementById('b-size').value + " (" + document.getElementById('b-gsm').value + ")",
+                total: document.getElementById('b-total').value, 
+                paid: document.getElementById('b-paid').value,
+                remark: document.getElementById('b-remark').value
+            };
+            if(!entry.name || !entry.total) return alert("Fill Name and Total Amount");
+            await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(entry) });
+            alert("Transaction Saved!"); fetchSheetData();
+        }
+
+        async function fetchSheetData() {
+            const response = await fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify({ action: "getData" }) });
+            const data = await response.json();
+            document.getElementById('sheet-list').innerHTML = data.map((s, index) => {
+                const balance = s.total - s.paid;
+                return `<tr class="border-b hover:bg-gray-50">
+                    <td class="p-4 font-bold">${s.name}<br><span class="text-[10px] text-gray-400">${s.phone || ''}</span></td>
+                    <td class="p-4 text-xs">${s.item}</td>
+                    <td class="p-4">₹${s.total}</td>
+                    <td class="p-4 text-green-600">₹${s.paid}</td>
+                    <td class="p-4 font-bold ${balance > 0 ? 'text-red-500' : 'text-green-600'}">₹${balance}</td>
+                    <td class="p-4 text-xs italic text-gray-500">${s.remark || '-'}</td>
+                    <td class="p-4 text-center"><button onclick="deleteEntry(${index})" class="text-red-400 hover:text-red-600 text-xs font-bold">Delete</button></td>
+                </tr>`;
+            }).reverse().join('');
+        }
+
+        function deleteEntry(idx) { if(confirm("Delete this entry?")) { alert("Entry hidden from view."); fetchSheetData(); } }
+
+        function orderWhatsApp(p, g, l, qId) {
+            const gsm = document.getElementById(g).value;
+            const len = document.getElementById(l).value;
+            const qty = document.getElementById(qId).value || '1 bundle';
+            window.open(`https://wa.me/918848561466?text=Order: ${p}, GSM: ${gsm}, Size: ${len}, Quantity: ${qty}`);
+        }
+        function orderETM() {
+            const b = document.getElementById('etm-bundle').value;
+            const q = document.getElementById('qty-etm').value || '1';
+            window.open(`https://wa.me/918848561466?text=ETM Machine Order: ${b}, Quantity: ${q}`);
+        }
+        function sendFeedback() { window.open(`https://wa.me/918848561466?text=Whiteroll Requirement: ${document.getElementById('f-msg').value}`); }
+        function bookAd() { window.open(`https://wa.me/918848561466?text=Inquiry: In-Bus Ads`); }
+
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('scroll-active'); }); }, { threshold: 0.5 });
+        document.querySelectorAll('.scroll-card').forEach(card => observer.observe(card));
+    </script>
+</body>
+</html>
